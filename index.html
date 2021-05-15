@@ -19,9 +19,10 @@
     Sungho Lee, Hyeong-Seok Choi, and Kyogu Lee <br>
     Music and Audio Research Group, Seoul National University, Seoul, Republic of Korea <br>
     <br>
+    <b>ABSTRACT</b>
   </center>
   
-  <b>ABSTRACT.</b> We propose differentiable artificial reverberation (DAR), a family of artificial reverberation (AR) models implemented in a deep learning framework. 
+  We propose differentiable artificial reverberation (DAR), a family of artificial reverberation (AR) models implemented in a deep learning framework. 
   Combined with the modern deep neural networks (DNNs), the differentiable structure of DAR allows training loss gradients to be back-propagated in an end-to-end manner.
   Most of the AR models are composed of infinite impulse response (IIR) filters, which bottleneck training speed like any other recurrent layer when implemented "as is" in the time domain and executed with a modern parallel processor like GPU. 
   We tackle this issue by further developing a recently proposed acceleration technique, which borrows the frequency-sampling method (FSM). 
