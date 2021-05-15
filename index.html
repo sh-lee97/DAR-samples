@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+    div {
+      max-width: 1000px;
+      min-width: 600px;
+    }
+  </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,14 +19,16 @@
     Sungho Lee, Hyeong-Seok Choi, and Kyogu Lee <br>
     Music and Audio Research Group, Seoul National University, Seoul, Republic of Korea <br>
     <br>
-    ABSTRACT <br>
     
+    <div>
+    ABSTRACT <br>
     We propose differentiable artificial reverberation (DAR), a family of artificial reverberation (AR) models implemented in a deep learning framework. 
     Combined with the modern deep neural networks (DNNs), the differentiable structure of DAR allows training loss gradients to be back-propagated in an end-to-end manner.
     Most of the AR models are composed of infinite impulse response (IIR) filters, which bottleneck training speed like any other recurrent layer when implemented ``as is'' in the time domain and executed with a modern parallel processor like GPU. 
     We tackle this issue by further developing a recently proposed acceleration technique, which borrows the frequency-sampling method (FSM). 
     With the proposed DAR models, we aim to solve an artificial reverberation parameter (ARP) estimation task in a unified approach: we design an ARP estimation network architecture applicable to both analysis-synthesis (RIR-to-ARP) and blind estimation (reverberant-speech-to-ARP) tasks.
     This way, the proposed DAR framework overcomes the previous methods' limitations of task-dependency and AR-model-dependency.
+    </div>
     
   <h3> Filtered Velvet Noise </h3>
   <table>
