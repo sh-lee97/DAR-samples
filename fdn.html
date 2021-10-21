@@ -1,0 +1,347 @@
+<html lang="en">
+<head>
+  <style>
+    div {
+      max-width: 1000px;
+      min-width: 600px;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<center>
+  <h3> Feedback Delay Network (FDN) </h3>
+  <table>
+    <tr>
+      <th>Train</th>
+      <th>Test</th>
+      <th>No.</th>
+      <th>Ground-truth</th>
+      <th>DAR Estimations</th>
+      <th>LTI AR Estimations</th>
+      <th>LTV AR Estimations</th>
+    </tr>
+
+    <tr>
+      <td style="text-align: center;" rowspan="3" colspan="2">Analysis-synthesis</td>
+      <td style="text-align: center;" rowspan="3">1</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/007/as_2_rir.wav" type="audio/wav"></audio><br>RIR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/007/as_2_freq_sampled_estimation.wav" type="audio/wav"></audio><br>Differentiable FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/007/as_2_true_lti_estimation.wav" type="audio/wav"></audio><br>LTI FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/007/as_2_true_estimation.wav" type="audio/wav"></audio><br>LTV FDN IR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" valign="top"><audio controls style="width: 250px;"><source src="audio/fdn/as/007/as_2_transmitted_speech.wav" type="audio/wav"></audio><br>Reverberant Speech</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/007/as_2_freq_sampled_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ Differentiable FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/007/as_2_true_lti_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTI  FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/007/as_2_true_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTV FDN</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/007/as_2_dry_speech.wav" type="audio/wav"></audio><br>Dry Speech</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" rowspan="3" colspan="2">Analysis-synthesis</td>
+      <td style="text-align: center;" rowspan="3">2</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/006/as_1_rir.wav" type="audio/wav"></audio><br>RIR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/006/as_1_freq_sampled_estimation.wav" type="audio/wav"></audio><br>Differentiable FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/006/as_1_true_lti_estimation.wav" type="audio/wav"></audio><br>LTI FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/006/as_1_true_estimation.wav" type="audio/wav"></audio><br>LTV FDN IR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" valign="top"><audio controls style="width: 250px;"><source src="audio/fdn/as/006/as_1_transmitted_speech.wav" type="audio/wav"></audio><br>Reverberant Speech</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/006/as_1_freq_sampled_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ Differentiable FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/006/as_1_true_lti_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTI FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/006/as_1_true_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTI FDN</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/006/as_1_dry_speech.wav" type="audio/wav"></audio><br>Dry Speech</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" rowspan="3" colspan="2">Analysis-synthesis</td>
+      <td style="text-align: center;" rowspan="3">3</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/002/as_0_rir.wav" type="audio/wav"></audio><br>RIR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/002/as_0_freq_sampled_estimation.wav" type="audio/wav"></audio><br>Differentiable FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/002/as_0_true_lti_estimation.wav" type="audio/wav"></audio><br>LTI FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/002/as_0_true_estimation.wav" type="audio/wav"></audio><br>LTV FDN IR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" valign="top"><audio controls style="width: 250px;"><source src="audio/fdn/as/002/as_0_transmitted_speech.wav" type="audio/wav"></audio><br>Reverberant Speech</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/002/as_0_freq_sampled_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ Differentiable FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/002/as_0_true_lti_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTI FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/002/as_0_true_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTV FDN</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/as/002/as_0_dry_speech.wav" type="audio/wav"></audio><br>Dry Speech</td>
+    </tr>
+
+    <tr>
+      <td style="text-align: center;" rowspan="3" colspan="2">Analysis-synthesis<br>ARP-matching Baseline</td>
+      <td style="text-align: center;" rowspan="3">1</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/007/as_2_rir.wav" type="audio/wav"></audio><br>RIR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/007/as_2_freq_sampled_estimation.wav" type="audio/wav"></audio><br>Differentiable FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/007/as_2_true_lti_estimation.wav" type="audio/wav"></audio><br>LTI FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/007/as_2_true_estimation.wav" type="audio/wav"></audio><br>LTV FDN IR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" valign="top"><audio controls style="width: 250px;"><source src="audio/fdn/asp/007/as_2_transmitted_speech.wav" type="audio/wav"></audio><br>Reverberant Speech</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/007/as_2_freq_sampled_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ Differentiable FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/007/as_2_true_lti_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTI  FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/007/as_2_true_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTV FDN</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/007/as_2_dry_speech.wav" type="audio/wav"></audio><br>Dry Speech</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" rowspan="3" colspan="2">Analysis-synthesis<br>ARP-matching Baseline</td>
+      <td style="text-align: center;" rowspan="3">2</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/006/as_1_rir.wav" type="audio/wav"></audio><br>RIR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/006/as_1_freq_sampled_estimation.wav" type="audio/wav"></audio><br>Differentiable FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/006/as_1_true_lti_estimation.wav" type="audio/wav"></audio><br>LTI FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/006/as_1_true_estimation.wav" type="audio/wav"></audio><br>LTV FDN IR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" valign="top"><audio controls style="width: 250px;"><source src="audio/fdn/as/006/asp_1_transmitted_speech.wav" type="audio/wav"></audio><br>Reverberant Speech</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/006/as_1_freq_sampled_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ Differentiable FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/006/as_1_true_lti_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTI FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/006/as_1_true_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTI FDN</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/006/as_1_dry_speech.wav" type="audio/wav"></audio><br>Dry Speech</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" rowspan="3" colspan="2">Analysis-synthesis<br>ARP-matching Baseline</td>
+      <td style="text-align: center;" rowspan="3">3</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/002/as_0_rir.wav" type="audio/wav"></audio><br>RIR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/002/as_0_freq_sampled_estimation.wav" type="audio/wav"></audio><br>Differentiable FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/002/as_0_true_lti_estimation.wav" type="audio/wav"></audio><br>LTI FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/002/as_0_true_estimation.wav" type="audio/wav"></audio><br>LTV FDN IR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" valign="top"><audio controls style="width: 250px;"><source src="audio/fdn/asp/002/as_0_transmitted_speech.wav" type="audio/wav"></audio><br>Reverberant Speech</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/002/as_0_freq_sampled_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ Differentiable FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/002/as_0_true_lti_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTI FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/002/as_0_true_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTV FDN</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/asp/002/as_0_dry_speech.wav" type="audio/wav"></audio><br>Dry Speech</td>
+    </tr>
+
+    <tr>
+      <td style="text-align: center;" rowspan="3" colspan="2">Blind Estimation</td>
+      <td style="text-align: center;" rowspan="3">1</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/007/be_2_rir.wav" type="audio/wav"></audio><br>RIR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/007/be_2_freq_sampled_estimation.wav" type="audio/wav"></audio><br>Differentiable FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/007/be_2_true_lti_estimation.wav" type="audio/wav"></audio><br>LTI FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/007/be_2_true_estimation.wav" type="audio/wav"></audio><br>LTV FDN IR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" valign="top"><audio controls style="width: 250px;"><source src="audio/fdn/be/007/be_2_transmitted_speech.wav" type="audio/wav"></audio><br>Reverberant Speech</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/007/be_2_freq_sampled_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ Differentiable FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/007/be_2_true_lti_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTI FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/007/be_2_true_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTV FDN</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/007/be_2_dry_speech.wav" type="audio/wav"></audio><br>Dry Speech</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" rowspan="3" colspan="2">Blind Estimation</td>
+      <td style="text-align: center;" rowspan="3">2</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/006/be_1_rir.wav" type="audio/wav"></audio><br>RIR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/006/be_1_freq_sampled_estimation.wav" type="audio/wav"></audio><br>Differentiable FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/006/be_1_true_lti_estimation.wav" type="audio/wav"></audio><br>LTI FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/006/be_1_true_estimation.wav" type="audio/wav"></audio><br>LTV FDN IR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" valign="top"><audio controls style="width: 250px;"><source src="audio/fdn/be/006/be_1_transmitted_speech.wav" type="audio/wav"></audio><br>Reverberant Speech</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/006/be_1_freq_sampled_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ Differentiable FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/006/be_1_true_lti_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTI FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/006/be_1_true_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTV FDN</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/006/be_1_dry_speech.wav" type="audio/wav"></audio><br>Dry Speech</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" rowspan="3" colspan="2">Blind Estimation</td>
+      <td style="text-align: center;" rowspan="3">3</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/002/be_0_rir.wav" type="audio/wav"></audio><br>RIR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/002/be_0_freq_sampled_estimation.wav" type="audio/wav"></audio><br>Differentiable FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/002/be_0_true_lti_estimation.wav" type="audio/wav"></audio><br>LTI FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/002/be_0_true_estimation.wav" type="audio/wav"></audio><br>LTV FDN IR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" valign="top"><audio controls style="width: 250px;"><source src="audio/fdn/be/002/be_0_transmitted_speech.wav" type="audio/wav"></audio><br>Reverberant Speech</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/002/be_0_freq_sampled_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ Differentiable FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/002/be_0_true_lti_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTI FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/002/be_0_true_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTV FDN</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/be/002/be_0_dry_speech.wav" type="audio/wav"></audio><br>Dry Speech</td>
+    </tr>
+
+    <tr>
+      <td style="text-align: center;" rowspan="3" colspan="2">Blind Estimation<br>ARP-matching Baseline</td>
+      <td style="text-align: center;" rowspan="3">1</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/007/be_2_rir.wav" type="audio/wav"></audio><br>RIR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/007/be_2_freq_sampled_estimation.wav" type="audio/wav"></audio><br>Differentiable FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/007/be_2_true_lti_estimation.wav" type="audio/wav"></audio><br>LTI FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/007/be_2_true_estimation.wav" type="audio/wav"></audio><br>LTV FDN IR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" valign="top"><audio controls style="width: 250px;"><source src="audio/fdn/bep/007/be_2_transmitted_speech.wav" type="audio/wav"></audio><br>Reverberant Speech</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/007/be_2_freq_sampled_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ Differentiable FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/007/be_2_true_lti_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTI FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/007/be_2_true_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTV FDN</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/007/be_2_dry_speech.wav" type="audio/wav"></audio><br>Dry Speech</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" rowspan="3" colspan="2">Blind Estimation<br>ARP-matching Baseline</td>
+      <td style="text-align: center;" rowspan="3">2</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/006/be_1_rir.wav" type="audio/wav"></audio><br>RIR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/006/be_1_freq_sampled_estimation.wav" type="audio/wav"></audio><br>Differentiable FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/006/be_1_true_lti_estimation.wav" type="audio/wav"></audio><br>LTI FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/006/be_1_true_estimation.wav" type="audio/wav"></audio><br>LTV FDN IR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" valign="top"><audio controls style="width: 250px;"><source src="audio/fdn/bep/006/be_1_transmitted_speech.wav" type="audio/wav"></audio><br>Reverberant Speech</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/006/be_1_freq_sampled_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ Differentiable FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/006/be_1_true_lti_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTI FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/006/be_1_true_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTV FDN</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/006/be_1_dry_speech.wav" type="audio/wav"></audio><br>Dry Speech</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" rowspan="3" colspan="2">Blind Estimation<br>ARP-matching Baseline</td>
+      <td style="text-align: center;" rowspan="3">3</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/002/be_0_rir.wav" type="audio/wav"></audio><br>RIR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/002/be_0_freq_sampled_estimation.wav" type="audio/wav"></audio><br>Differentiable FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/002/be_0_true_lti_estimation.wav" type="audio/wav"></audio><br>LTI FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/002/be_0_true_estimation.wav" type="audio/wav"></audio><br>LTV FDN IR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" valign="top"><audio controls style="width: 250px;"><source src="audio/fdn/bep/002/be_0_transmitted_speech.wav" type="audio/wav"></audio><br>Reverberant Speech</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/002/be_0_freq_sampled_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ Differentiable FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/002/be_0_true_lti_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTI FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/002/be_0_true_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTV FDN</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/bep/002/be_0_dry_speech.wav" type="audio/wav"></audio><br>Dry Speech</td>
+    </tr>
+
+    <tr>
+      <td style="text-align: center;" rowspan="3">Both</td>
+      <td style="text-align: center;" rowspan="3">Analysis-synthesis</td>
+      <td style="text-align: center;" rowspan="3">1</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/007/as_2_rir.wav" type="audio/wav"></audio><br>RIR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/007/as_2_freq_sampled_estimation.wav" type="audio/wav"></audio><br>Differentiable FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/007/as_2_true_lti_estimation.wav" type="audio/wav"></audio><br>LTI FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/007/as_2_true_estimation.wav" type="audio/wav"></audio><br>LTV FDN IR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" valign="top"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/007/as_2_transmitted_speech.wav" type="audio/wav"></audio><br>Reverberant Speech</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/007/as_2_freq_sampled_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ Differentiable FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/007/as_2_true_lti_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTI FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/007/as_2_true_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTV FDN</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/007/as_2_dry_speech.wav" type="audio/wav"></audio><br>Dry Speech</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" rowspan="3">Both</td>
+      <td style="text-align: center;" rowspan="3">Analysis-synthesis</td>
+      <td style="text-align: center;" rowspan="3">2</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/006/as_1_rir.wav" type="audio/wav"></audio><br>RIR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/006/as_1_freq_sampled_estimation.wav" type="audio/wav"></audio><br>Differentiable FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/006/as_1_true_lti_estimation.wav" type="audio/wav"></audio><br>LTI FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/006/as_1_true_estimation.wav" type="audio/wav"></audio><br>LTV FDN IR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" valign="top"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/006/as_1_transmitted_speech.wav" type="audio/wav"></audio><br>Reverberant Speech</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/006/as_1_freq_sampled_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ Differentiable FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/006/as_1_true_lti_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTI FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/006/as_1_true_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTV FDN</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/006/as_1_dry_speech.wav" type="audio/wav"></audio><br>Dry Speech</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" rowspan="3">Both</td>
+      <td style="text-align: center;" rowspan="3">Analysis-synthesis</td>
+      <td style="text-align: center;" rowspan="3">3</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/002/as_0_rir.wav" type="audio/wav"></audio><br>RIR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/002/as_0_freq_sampled_estimation.wav" type="audio/wav"></audio><br>Differentiable FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/002/as_0_true_lti_estimation.wav" type="audio/wav"></audio><br>LTI FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/002/as_0_true_estimation.wav" type="audio/wav"></audio><br>LTV FDN IR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" valign="top"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/002/as_0_transmitted_speech.wav" type="audio/wav"></audio><br>Reverberant Speech</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/002/as_0_freq_sampled_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ Differentiable FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/002/as_0_true_lti_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTI FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/002/as_0_true_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTV FDN</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-as/002/as_0_dry_speech.wav" type="audio/wav"></audio><br>Dry Speech</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" rowspan="3">Both</td>
+      <td style="text-align: center;" rowspan="3">Blind Estimation</td>
+      <td style="text-align: center;" rowspan="3">1</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/007/be_2_rir.wav" type="audio/wav"></audio><br>RIR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/007/be_2_freq_sampled_estimation.wav" type="audio/wav"></audio><br>Differentiable FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/007/be_2_true_lti_estimation.wav" type="audio/wav"></audio><br>LTI FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/007/be_2_true_estimation.wav" type="audio/wav"></audio><br>LTV FDN IR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" valign="top"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/007/be_2_transmitted_speech.wav" type="audio/wav"></audio><br>Reverberant Speech</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/007/be_2_freq_sampled_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ Differentiable FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/007/be_2_true_lti_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTI FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/007/be_2_true_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTV FDN</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/007/be_2_dry_speech.wav" type="audio/wav"></audio><br>Dry Speech</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" rowspan="3">Both</td>
+      <td style="text-align: center;" rowspan="3">Blind Estimation</td>
+      <td style="text-align: center;" rowspan="3">2</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/006/be_1_rir.wav" type="audio/wav"></audio><br>RIR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/006/be_1_freq_sampled_estimation.wav" type="audio/wav"></audio><br>Differentiable FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/006/be_1_true_lti_estimation.wav" type="audio/wav"></audio><br>LTI FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/006/be_1_true_estimation.wav" type="audio/wav"></audio><br>LTV FDN IR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" valign="top"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/006/be_1_transmitted_speech.wav" type="audio/wav"></audio><br>Reverberant Speech</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/006/be_1_freq_sampled_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ Differentiable FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/006/be_1_true_lti_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTI FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/006/be_1_true_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTV FDN</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/006/be_1_dry_speech.wav" type="audio/wav"></audio><br>Dry Speech</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" rowspan="3">Both</td>
+      <td style="text-align: center;" rowspan="3">Blind Estimation</td>
+      <td style="text-align: center;" rowspan="3">3</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/002/be_0_rir.wav" type="audio/wav"></audio><br>RIR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/002/be_0_freq_sampled_estimation.wav" type="audio/wav"></audio><br>Differentiable FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/002/be_0_true_lti_estimation.wav" type="audio/wav"></audio><br>LTI FDN IR</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/002/be_0_true_estimation.wav" type="audio/wav"></audio><br>LTV FDN IR</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;" valign="top"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/002/be_0_transmitted_speech.wav" type="audio/wav"></audio><br>Reverberant Speech</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/002/be_0_freq_sampled_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ Differentiable FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/002/be_0_true_lti_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTI FDN</td>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/002/be_0_true_convolved_speech.wav" type="audio/wav"></audio><br>Reverberant Speech<br>w/ LTV FDN</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;"><audio controls style="width: 250px;"><source src="audio/fdn/both-be/002/be_0_dry_speech.wav" type="audio/wav"></audio><br>Dry Speech</td>
+    </tr>
+  </table>
+</center>

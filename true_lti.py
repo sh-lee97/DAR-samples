@@ -3,7 +3,7 @@ import soundfile as sf
 import glob
 from scipy import signal
 
-dirs = glob.glob('audio/fdn/*/*')
+dirs = glob.glob('audio/fdn/*p/*')
 
 for dir_folder in dirs:
     lti_ir_dir = glob.glob(dir_folder + '/*true_lti_estimation.wav')[0]
