@@ -2,18 +2,11 @@
 <html lang="en">
 <head>
   <style>
-    div {
-      max-width: 1000px;
-      min-width: 600px;
-    }
-    table, th, td {
-      border: 1px solid black;
-    }
   </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Differentiable Artificial Reverberation</title>
 </head>
 <body>
   <center>
@@ -22,9 +15,14 @@
     Sungho Lee, Hyeong-Seok Choi, and Kyogu Lee <br>
     Music and Audio Research Group, Seoul National University, Seoul, Republic of Korea <br>
     <br>
-    <b>ABSTRACT</b>
   </center>
 <br>
+    <table style="max-width:960px;">
+    <tr>
+    <td>
+    <hr>
+    <b>Abstract</b>
+    
 Artificial reverberation (AR) models play a central role in various audio applications. 
 Therefore, estimating the AR model parameters (ARPs) of a reference reverberation is a crucial task.
 Although a few recent deep-learning-based approaches have shown promising performance, their non-end-to-end training scheme prevents them from fully exploiting the potential of deep neural networks.
@@ -33,24 +31,42 @@ We tackle this problem by replacing the IIR filters with finite impulse response
 Using this technique, we implement three DAR models---differentiable Filtered Velvet Noise (FVN), Advanced Filtered Velvet Noise (AFVN), and Delay Network (DN).
 For each AR model, we train its ARP estimation networks for analysis-synthesis (RIR-to-ARP) and blind estimation (reverberant-speech-to-ARP) task in an end-to-end manner with its DAR model counterpart.
 Experiment results show that the proposed method achieves consistent performance improvement over the non-end-to-end approaches in both objective metrics and subjective listening test results. 
-  
-  <center>
-  <br>
-  <img src="framework_fin.png" alt="Framework-train", width="500">
-  <br>
-  <br>
-  <img src="framework-test-3.png" alt="Framework-test", width="500">
-  <br>
-  <br>
-  Proposed Framework.
-  <br>
-  <br>
-  <h3> Audio Samples </h3>
-  <a href="fvn.html">Filtered Velvet Noise (FVN)</a><br>
-  <a href="afvn.html">Advanced Filtered Velvet Noise (AFVN)</a><br>
-  <a href="fdn.html">Delay Network (DN)</a><br>
-  <a href="dnn.html">DNN Decoder Baseline (DNN)</a>
-  </center>
+<br>
+<hr>
+<h3> Audio Samples </h3>
+<a href="fvn.html">Filtered Velvet Noise (FVN)</a><br>
+<a href="afvn.html">Advanced Filtered Velvet Noise (AFVN)</a><br>
+<a href="fdn.html">Delay Network (DN)</a><br>
+<a href="dnn.html">DNN Decoder Baseline (DNN)</a>
+<hr>
 
+
+<h3> Figure </h3>
+
+<center>
+<table style="max-width:100%">
+<tr>
+<td style="width:520px; border:0px; max-width:100%">
+<center>
+<img src="framework_fin.png" alt="Framework-train", style="width:510px; max-width:100%">
+<br>
+<img src="framework-test-3.png" alt="Framework-test", style="width:510px; max-width:100%">
+</center>
+<small>
+<p class="small">
+The proposed ARP estimation framework. 
+With the DAR models, loss gradients ∂L/∂P1, ···, ∂L/∂Pn can be back-propagated through the DAR models. 
+Hence, the ARP estimation network can be trained in an end-to-end manner. 
+We can train the network to perform the analysis-synthesis (RIR h input), blind estimation (reverberant speech h*x input), or even both. 
+The network has an AR-model-agnostic encoder so that using a different DAR model only requires changing the tiny projection layers Proj1, ···, Projn. 
+Each DAR model generate an FIR approximation of its original AR model’s IIR. 
+After the training, estimated ARPs can be plugged in to the AR model which is highly efficient and real-time controllable in CPU.
+</p>
+</small>
+</td>
+</tr>
+</table>
+<hr>
+</center>
 </body>
 </html>
